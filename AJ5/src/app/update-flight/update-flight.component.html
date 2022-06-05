@@ -1,0 +1,27 @@
+
+
+<div class="container">
+  <form (ngSubmit)="!fightForm.invalid && saveUpdatedFlight()" #fightForm="ngForm">
+<fieldset class="form-group">
+<label>Flight Type</label>
+<input type="text" [(ngModel)]="flight.type" class="form-control" name="flightType" required="required" minlength="3">
+
+
+</fieldset>
+<fieldset class="form-group">
+  <label>Flight Price</label>
+  <input type="text"  [(ngModel)]="flight.price" class="form-control" name="flightPrice" required="required">
+  
+  
+  </fieldset>
+  <fieldset class="form-group">
+    <label>Flight Date</label>
+    <input type="date"  [ngModel]="flight.journeyDate | date :'yyyy-MM-dd'" (ngModelChange)="flight.journeyDate=$event"
+     class="form-control" name="flightDate" required="required">
+    
+    
+    </fieldset>
+
+    <button type="submit">SAVE</button>
+    </form>
+  </div>

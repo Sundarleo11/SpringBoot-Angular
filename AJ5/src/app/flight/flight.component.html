@@ -1,0 +1,48 @@
+<div class="alert alert-success" *ngIf='msg'>{{msg}}</div>-
+<table class="table" border="1">
+
+  <thead>
+
+    <tr>
+
+      <th>ID</th>
+      <th>Flight Type</th>
+      <th>status</th>
+      <th>Jouney date</th>
+      <th>Price</th>
+      <th>Delete</th>
+      <th>Update</th>
+
+
+    </tr>
+
+
+
+  </thead>
+
+<tbody>
+
+<tr *ngFor="let flight of flights">
+
+<td>{{flight.id}}</td>
+<td>{{flight.type}}</td>
+<td>{{flight.status}}</td>
+<td>{{flight.journeyDate | date |uppercase |date :'dd/MM/yyyy'}}</td>
+<td>{{flight.price}}</td>
+<td><button (click)="deleteFlightList(flight.id)" class="btn btn-warning">DeleteFlight</button></td>
+<td><button (click)="updateFlightList(flight.id)" class="btn btn-success">UpdateFlight</button></td>
+</tr>
+
+
+
+</tbody>
+
+
+<div class="row">
+
+
+
+  <button (click)="addFlight()" class="btn btn-success">SAVE</button>
+</div>
+
+</table>
